@@ -1,0 +1,80 @@
+#This is a spatial biography of Karl Marx
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix xml: <http://www.w3.org/XML/1998/namespace>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dbp: <http://dbpedia.org/resource/>.
+@prefix dbp-ont: <http://dbpedia.org/ontology/>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix wgs84: <http://www.w3.org/2003/01/geo/wgs84_pos#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix dbr: <http://dbpedia.org/resource/>.
+@prefix time: <http://www.w3.org/2006/time#> .
+
+#<https://dbpedia.org/page/Karl_Marx>
+
+dbp:Karl_Marx 
+dbp-ont:birthPlace [	dbp-ont:City dbp:Trier;
+							dbp-ont:Country dbp:Germany
+						];
+foaf:name "Karl Heinrich Marx";
+dbp-ont:birthDate 	   "1818-01-01^^xsd:date";
+dbp-ont:deathPlace [	dbp-ont:City dbp:London;
+							dbp-ont:Country dbp:United_Kingdom
+						];
+dbp-ont:deathDate 	   "1883-03-14^^xsd:date";
+dbp-ont:thumbnail <https://en.wikipedia.org/wiki/Karl_Marx#/media/File:Karl_Marx_001.jpg>;
+dbp-ont:spouse dbp:Jenny_von_Westphalen.
+dbp:Jenny_von_Westphalen foaf:name "Jenny von Westphalen".
+dbp:Karl_Marx dbp-ont:residence dbp:residance_Karl_Marx.
+dbp:Karl_Marx dbp-ont:almaMater dbp:University_of_Bonn, dbp:University_of_Jena, dbp:Humboldt_University_of_Berlin.
+
+dbp:University_of_Bonn rdfs:label "University of Bonn";
+dbp-ont:country dbp:Germany.
+dbp:University_of_Jena rdfs:label "University of Jena";
+dbp-ont:country dbp:Germany.
+dbp:Humboldt_University_of_Berlin rdfs:label "Humboldt University of Berlin";
+dbp-ont:country dbp:Germany.
+
+dbp:Karl_Marx dbp-ont:author dbp:Das_Capital.
+dbp:Das_Capital a dbp-ont:novel;
+rdfs:label "Capital"@en.
+dbp:Karl_Marx dbp-ont:author dbp:The_Communist_Manifesto.
+dbp:The_Communist_Manifesto a dbp-ont:novel;
+rdfs:label "The Communist Manifesto"@en.
+
+dbp:residance_Karl_Marx
+rdfs:label "Karl Marx's residance cities";
+dc:coverage dbp:Trier,
+dbp:Paris, 
+dbp:Brussels, 
+dbp:London, 
+dbp:Cologne.
+
+dbp:Trier  wgs84:geometry "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(6.63 49.75)"^^<http://www.opengis.net/ont/sf#wktLiteral>;
+rdfs:label "Trier"@en; 
+dbp-ont:country dbp:Germany;
+          time:hasBeginning "1818-01-01"^^time:dateTime;
+          time:hasEnd "1836-01-01"^^time:dateTime.
+dbp:Paris wgs84:geometry "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(2.349014 48.864716)"^^<http://www.opengis.net/ont/sf#wktLiteral>;
+rdfs:label "Paris"@en;
+dbp-ont:country dbp:France;
+          time:hasBeginning "1843-10-01"^^time:dateTime;
+          time:hasEnd "1845-01-01"^^time:dateTime.
+dbp:Brussels wgs84:geometry "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(4.351721 50.850346)"^^<http://www.opengis.net/ont/sf#wktLiteral>;
+rdfs:label "Brussels"@en;
+dbp-ont:country dbp:Belgium;
+          time:hasBeginning "1845-02-01"^^time:dateTime;
+          time:hasEnd "1848-01-01"^^time:dateTime.
+dbp:Cologne wgs84:geometry "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(6.953101 50.935173)"^^<http://www.opengis.net/ont/sf#wktLiteral>;
+rdfs:label "Cologne"@en;
+dbp-ont:counry dbp:Germany;
+          time:hasBeginning "1848-02-01"^^time:dateTime;
+          time:hasEnd "1849-05-16"^^time:dateTime.
+dbp:London wgs84:geometry "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> POINT(-0.118092 51.509865)"^^<http://www.opengis.net/ont/sf#wktLiteral>;
+rdfs:label "London"@en;
+dbp-ont:country dbp:United_Kingdom;
+          time:hasBeginning "1849-06-01"^^time:dateTime;
+          time:hasEnd "1883-03-14"^^time:dateTime.
